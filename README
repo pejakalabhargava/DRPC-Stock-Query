@@ -1,0 +1,13 @@
+
+1)Copy the contents of the tutorial to /apache-storm-0.9.3/examples/storm-starter/src/jvm/storm/starter/trident/tutorial of the user home directory
+
+2)Make sure data/stocks.csv.gz is present relative to pom.xml file.Make sure csv file has "date", "symbol", "price", "shares" as comma sepearetd fields.
+
+3)compile amd pacakge the code from  /apache-storm-0.9.3/examples/storm-starter folder with the below command,
+	mvn package
+
+4)Run the apache storm with,
+	storm jar target/storm-starter-0.9.3-jar-with-dependencies.jar storm.starter.trident.tutorial.DRPCStockQueryTopology> output.txt &
+
+5)view the results using,
+	cat output.txt | grep "DRPC RESULT"
